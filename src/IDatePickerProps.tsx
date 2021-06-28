@@ -11,6 +11,7 @@ interface IDatePickerProps {
   disabled?: boolean;
   locale?: any;
   minuteStep?: number;
+  formatYear?: (year: number, date?: any) => any;
   formatMonth?: (month: number, date?: any) => any;
   formatDay?: (day: number, date?: any) => any;
   onDateChange?: (date: any) => void;

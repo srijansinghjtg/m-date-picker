@@ -220,7 +220,7 @@ class DatePicker extends React.Component<IDatePickerProps, any> {
   }
 
   getDateData() {
-    const { locale, formatMonth, formatDay, mode } = this.props;
+    const { locale, formatMonth, formatDay, formatYear, mode } = this.props;
     const date = this.getDate();
     const selYear = date.getFullYear();
     const selMonth = date.getMonth();
@@ -232,6 +232,11 @@ class DatePicker extends React.Component<IDatePickerProps, any> {
     const maxDateDay = this.getMaxDay();
     const years: any[] = [];
     for (let i = minDateYear; i <= maxDateYear; i++) {
+      const label = formatYear ? formatYear(i, date) : i + locale.year + '';
+      years.push({
+        value: i + '',
+        label: label,
+      });
       years.push({
         value: i + '',
         label: i + locale.year + '',
