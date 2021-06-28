@@ -237,10 +237,6 @@ class DatePicker extends React.Component<IDatePickerProps, any> {
         value: i + '',
         label: label,
       });
-      years.push({
-        value: i + '',
-        label: i + locale.year + '',
-      });
     }
     const yearCol = { key: 'year', props: { children: years } };
     if (mode === YEAR) {
